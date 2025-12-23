@@ -1,0 +1,43 @@
+{
+  "name": "envoy",
+  "version": "0.1.0",
+  "description": "A typed, runtime-safe environment & configuration manager for modern JavaScript and TypeScript applications.",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "require": "./dist/index.js",
+      "import": "./dist/index.mjs"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup src/index.ts --format cjs,esm --dts --clean",
+    "test": "vitest run",
+    "prepublishOnly": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/microstack-dev/envoy.git"
+  },
+  "keywords": [
+    "environment",
+    "configuration",
+    "typescript",
+    "validation",
+    "schema",
+    "runtime-safe"
+  ],
+  "author": "microstack-dev",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^25.0.3",
+    "tsup": "^8.5.1",
+    "typescript": "^5.9.3",
+    "vitest": "^4.0.16"
+  }
+}
